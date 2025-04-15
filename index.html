@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>VEU-Bench</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://kit.fontawesome.com/f8ddf9854a.js" crossorigin="anonymous"></script>
   <meta charset="utf-8">
   <meta name="description"
         content="VEU-Bench: Towards Comprehensive Understanding of Video Editing">
@@ -22,8 +25,7 @@
     gtag('config', 'G-PYVRSFMDRL');
   </script>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
@@ -33,7 +35,7 @@
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="icon" href="./static/images/favicon.svg">
-
+  <script src="https://kit.fontawesome.com/fff5b27ec1.js" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
@@ -64,20 +66,51 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title">VEU-Bench: Towards Comprehensive Understanding of Video Editing</h1>
+          
           <div class="is-size-4 publication-authors">
-            <!-- Update with your authors -->
             <span class="author-block">
-              <a href="https://www.linkedin.com/in/li-bozheng-612316285/">Bozheng Li</a><sup>1,2</sup>,</span>
+              <a href="https://www.linkedin.com/in/li-bozheng-612316285/">Bozheng Li</a><sup>1,2</sup><strong>*</strong>,
+            </span>
             <span class="author-block">
-              <a href="https://yongliang-wu.github.io/">Yongliang Wu</a><sup>1,3</sup>,</span>
-            <!-- Add more authors as needed -->
+              <a href="https://yongliang-wu.github.io/">Yongliang Wu</a><sup>1,3</sup><strong>†</strong>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/yi-lu-tom/">Yi Lu</a><sup>1,4</sup><strong>†</strong>,
+            </span>
+            <span class="author-block">
+              <a href="#">Jiashuo Yu</a><sup>5</sup>,
+            </span>
+            <span class="author-block">
+              <a href="#">Licheng Tang</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="#">Jiawang Cao</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="#">Wenqing Zhu</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="#">Yuyang Sun</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="#">Jay Wu</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="#">Wenbo Zhu</a><sup>1</sup>
+            </span>
           </div>
 
-          <div class="is-size-5 publication-authors">
+          <div class="is-size-6 mt-2">
+            <span><strong>*</strong> = Core Contributor</span><br>
+            <span><strong>†</strong> = Equal Contribution</span>
+          </div>
+
+          <div class="is-size-5 publication-authors mt-3">
             <span class="author-block"><sup>1</sup>Opus AI Research,</span>
             <span class="author-block"><sup>2</sup>Brown University,</span>
             <span class="author-block"><sup>3</sup>Southeast University,</span>
-            <!-- Add more institutions as needed -->
+            <span class="author-block"><sup>4</sup>University of Toronto,</span>
+            <span class="author-block"><sup>5</sup>Fudan University</span>
           </div>
 
           <div class="column has-text-centered">
@@ -116,8 +149,8 @@
               <span class="link-block">
                 <a href="https://github.com/yourusername/veu-bench/releases"
                    class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-images"></i>
+                  <span class="icon" style="font-size:18px">
+                    🤗
                   </span>
                   <span>Dataset</span>
                 </a>
@@ -128,60 +161,125 @@
       </div>
     </div>
   </div>
-</section
-
+</section>
 
 <section class="section">
-  <div class="container is-max-desktop">
+  <div class="container" style="margin-bottom: 2vh;">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
+        <h2 class="title is-3">🔔News</h2>
         <div class="content has-text-justified">
           <p>
-            Widely shared videos on the internet are often edited. Recently, although Video Large Language Models (Vid-LLMs) have made great progress in general video understanding tasks, their capabilities in video editing understanding (VEU) tasks remain unexplored. To address this gap, in this paper, we introduce VEU-Bench (\textbf{V}ideo \textbf{E}diting \textbf{U}nderstanding \textbf{Bench}mark), a comprehensive benchmark that categorizes video editing components across various dimensions, from intra-frame features like shot size to inter-shot attributes such as cut types and transitions. Unlike previous video editing understanding benchmarks that focus mainly on editing element classification, VEU-Bench encompasses 19 fine-grained tasks across three stages: recognition, reasoning, and judging. To enhance the annotation of VEU automatically, we built an annotation pipeline integrated with an ontology-based knowledge base. Through extensive experiments with 11 state-of-the-art Vid-LLMs, our findings reveal that current Vid-LLMs face significant challenges in VEU tasks, with some performing worse than random choice. To alleviate this issue, we develop Oscars\footnote{Named after the Academy Awards.}, a VEU expert model fine-tuned on the curated VEU-Bench dataset. It outperforms existing open-source Vid-LLMs on VEU-Bench by over 28.3\% in accuracy and achieves performance comparable to commercial models like GPT-4o. We also demonstrate that incorporating VEU data significantly enhances the performance of Vid-LLMs on general video understanding benchmarks, with an average improvement of 8.3\% across nine reasoning tasks. 
+            <b>🏆 [2025-02-26]: Our paper was accepted to CVPR 2025 🎉
+          </p>
+          <p>
+            <b>🔥 [2025-04-04]: Our paper was selected as a <span style="color:#e76f51;">Highlight (Top 3–5%)</span> paper ✨</b>
+          </p>
+      </div>
+        <h2 class="title is-3">Introduction</h2>
+        <div class="content has-text-justified">
+          <p>
+            Widely shared videos on the internet are often edited. Recently, although Video Large Language Models (Vid-LLMs) have made great progress in general video understanding tasks, their capabilities in video editing understanding (VEU) tasks remain unexplored.
+            To address this gap, in this paper, we introduce <strong>VEU-Bench</strong> (<strong>V</strong>ideo <strong>E</strong>diting <strong>U</strong>nderstanding <strong>Bench</strong>mark), a comprehensive benchmark that categorizes video editing components across various dimensions, from intra-frame features like shot size to inter-shot attributes such as cut types and transitions.
+            Unlike previous video editing understanding benchmarks that focus mainly on editing element classification, VEU-Bench encompasses <strong>19 fine-grained tasks</strong> across three stages: recognition, reasoning, and judging.
+            To enhance the annotation of VEU automatically, we built an annotation pipeline integrated with an ontology-based knowledge base.
+            Through extensive experiments with 11 state-of-the-art Vid-LLMs, our findings reveal that current Vid-LLMs face significant challenges in VEU tasks, with some performing worse than random choice.
+            To alleviate this issue, we develop <strong>Oscars</strong><sup title="Named after the Academy Awards.">★</sup>, a VEU expert model fine-tuned on the curated VEU-Bench dataset.
+            It outperforms existing open-source Vid-LLMs on VEU-Bench by over <strong>28.3%</strong> in accuracy and achieves performance comparable to commercial models like GPT-4o.
+            We also demonstrate that incorporating VEU data significantly enhances the performance of Vid-LLMs on general video understanding benchmarks, with an average improvement of <strong>8.3%</strong> across nine reasoning tasks.
           </p>
         </div>
       </div>
     </div>
     <!--/ Abstract. -->
-
-  </div>
+</div>
 </section>
 
+<!-- DATASET SECTION -->
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+    <h1 class="title is-1 mmmu">
+      <img src="static/images/mmmu_icon2.png" alt="Logo" class="mmmu-logo"/>
+      <span class="mmmu">VEU-Bench</span>
+    </h1>
+  </div>
+</section>
 
 <section class="section">
-  <div class="container is-max-desktop">
+  <div class="container">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Data Construction Pipeline</h2>
-        <div class="content has-text-centered">
-          <img src="static/images/data_pipeline.pdf" alt="Data Construction Pipeline">
-          <p>Overview of our data construction pipeline for VEU-Bench.</p>
+        <h2 class="title is-3">Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            We present <strong>VEU-Bench</strong> (Video Editing Understanding Benchmark), the first comprehensive benchmark designed to evaluate the video editing understanding capabilities of Video Large Language Models (Vid-LLMs). Unlike general video understanding tasks, video editing understanding (VEU) requires models to recognize abstract and symbolic editing elements—such as shot types, camera motions, cut types, and transitions—and to reason about their functions and stylistic intentions within narrative contexts.
+          </p>
+
+          <p>
+            VEU-Bench introduces a <strong>three-level evaluation paradigm</strong>—<em>recognition</em>, <em>reasoning</em>, and <em>judging</em>—across <strong>10 editing dimensions</strong> including both intra-frame (e.g., shot size, angle, color), intra-shot (e.g., motion, speed), and inter-shot elements (e.g., cut type, transition). With over <strong>50K high-quality QA pairs</strong> grounded in real edited videos, VEU-Bench offers a rich and diverse benchmark to evaluate models' ability to perceive visual editing cues, explain changes, and interpret artistic intentions.
+          </p>
+          
+          <div class="content has-text-centered">
+          <img src="static/images/teaser.png" alt="VEU Editing Dimensions" class="center" width="80%">
+          </div>
+
+          <p>
+            To generate high-quality annotations, we design an <strong>ontology-based annotation pipeline</strong> built upon domain-specific knowledge extracted from professional video editing tutorials. This system rewrites abstract editing concepts into video-specific prompts and explanations, enabling scalable generation of reasoning and judging tasks with minimal human intervention.
+          </p>
+
+          <div class="content has-text-centered">
+          <img src="static/images/data_pipeline.png" alt="VEU Editing Dimensions" class="center" width="80%">
+          </div>
+
+          <p>
+            Through extensive evaluations, we reveal that current state-of-the-art Vid-LLMs perform poorly on VEU tasks—often worse than random guessing in some categories—due to their weak alignment between editing knowledge and visual perception. To address this, we introduce <strong>Oscars</strong>, a VEU expert model fine-tuned on VEU-Bench. Oscars achieves a <strong>28.3% performance gain</strong> over existing open-source models and even rivals commercial models like GPT-4o.
+          </p>
+
+          <p>
+            More importantly, we demonstrate that <strong>training on VEU-Bench can significantly improve Vid-LLMs on general video reasoning tasks</strong>, with an average boost of 8.3% across multiple benchmarks. These findings highlight VEU-Bench as not only a challenge for editing-specific evaluation but also a valuable dataset for enhancing abstract reasoning in video foundation models.
+          </p>
         </div>
       </div>
     </div>
+  
+  
+
+    <div class="columns is-centered m-6">
+      <div class="column is-full has-text-centered content">
+        <h2 class="title is-3">Statistics</h2>
+        <div class="carousel results-carousel">
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/statistics/answer_length.png" alt="algebraic reasoning" width="100%"/>
+              <p> Sampled MMMU examples from each discipline. The questions and images need expert-level knowledge to understand and reason.</p>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/statistics/duration.png" alt="algebraic reasoning" width="100%"/>
+              <p> Sampled MMMU examples from each discipline. The questions and images need expert-level knowledge to understand and reason.</p>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/statistics/portion.png" alt="algebraic reasoning" width="100%"/>
+              <p> Sampled MMMU examples from each discipline. The questions and images need expert-level knowledge to understand and reason.</p>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/statistics/task_portion.png" alt="algebraic reasoning" width="100%"/>
+              <p> Sampled MMMU examples from each discipline. The questions and images need expert-level knowledge to understand and reason.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
   </div>
 </section>
 
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3 has-text-centered">Dataset Examples</h2>
-      <div id="dataset-carousel" class="carousel results-carousel">
-        <!-- Example 1 -->
-        <div class="item">
-          <img src="static/images/teaser.pdf" alt="Dataset Example 1">
-        </div>
-        <!-- Example 2 -->
-        <div class="item">
-          <img src="static/images/teaser.pdf" alt="Dataset Example 2">
-        </div>
-        <!-- Add more examples as needed -->
-      </div>
-    </div>
-  </div>
-</section>
 
 <section class="section">
   <div class="container is-max-desktop">
