@@ -202,7 +202,7 @@
   <div class="hero-body has-text-centered">
     <h1 class="title is-1 veu">
       <img src="static/images/favicon.ico" style="width:2em;vertical-align: middle" alt="Logo"/>
-      <span class="mmmu">VEU-Bench</span>
+      <span class="veu">VEU-Bench</span>
     </h1>
   </div>
 </section>
@@ -330,7 +330,7 @@
 <!-- RESULTS SECTION -->
 <section class="hero is-light is-small">
   <div class="hero-body has-text-centered">
-    <h1 class="title is-1 mmmu">Experiment Results</h1>
+    <h1 class="title is-1 veu">Experiment Results</h1>
   </div>
 </section>
 
@@ -342,23 +342,19 @@
         <h2 class="title is-3" id="leaderboard">Leaderboard</h2>
         <div class="content has-text-justified">
           <p>
-            We evaluate various models including LLMs and LMMs.
-            In each type, we consider both closed- and open-source models.
-            Our evaluation is conducted under a zero-shot setting to assess the capability of models to generate accurate answers without fine-tuning or few-shot demonstrations on our benchmark.
-            For all models, we use the default prompt provided by each model for multi-choice or open QA, if available.
-            If models do not provide prompts for task types in MMMU, we conduct prompt engineering on the validation set and use the most effective prompt for the later zero-shot experiment.
+            We evaluate various models including commercial models and open-source ones.
           </p>
         </div>
         <br>
         <div class="model-labels-container">
-          <span class="leaderboard-label human_expert">Human Expert</span>
+          <span class="leaderboard-label ours">Ours</span>
           <span class="leaderboard-label open_source">Open-Source</span>
-          <span class="leaderboard-label proprietary">Proprietary</span>
+          <span class="leaderboard-label commercial">Commercial</span>
         </div>
         <br>
         <div class="content has-text-centered">
           <p>
-            Click on MMMU-Pro, MMMU (Val) or MMMU (Test) to expand detailed results.
+            Click on Recognition, Reasoning&Judging or All Score to expand detailed results.
           </p>
         </div>
         <div class="leaderboard-container">
@@ -367,38 +363,43 @@
               <thead>
                 <tr>
                   <th colspan="3" class="reset-cell clickable" style="text-align: center;">Reset</th>
-                  <th class="pro-details-cell clickable" colspan="1">Recognition</th>
-                  <th class="val-details-cell clickable" colspan="1">Reasoning</th>
-                  <th class="test-details-cell clickable" colspan="1">Judging</th>
+                  <th class="recog-details-cell clickable" colspan="1">Recognition</th>
+                  <th class="rnj-details-cell clickable" colspan="1">Reasoning&Judging</th>
+                  <th class="all-details-cell clickable" colspan="1">All Score</th>
                 </tr>
                 <tr>
                   <th class="sortable clickable" data-sort="string">Name</th>
-                  <th class="clickable" data-sort="string">Parameter Size</th>
-                  <th class="clickable" data-sort="string">FPS</th>
-                  <th class="sortable clickable pro-overall" data-sort="number">Overall</th>
-                  <th class="hidden pro-details sortable clickable" data-sort="number">Vision</th>
-                  <th class="hidden pro-details sortable clickable" data-sort="number">Standard</th>
-                  <th class="sortable clickable val-overall" data-sort="number">Overall</th>
-                  <th class="hidden val-details sortable clickable" data-sort="number">Art & Design</th>
-                  <th class="hidden val-details sortable clickable" data-sort="number">Business</th>
-                  <th class="hidden val-details sortable clickable" data-sort="number">Science</th>
-                  <th class="hidden val-details sortable clickable" data-sort="number">Health & Medicine</th>
-                  <th class="hidden val-details sortable clickable" data-sort="number">Human. & Social Sci.</th>
-                  <th class="hidden val-details sortable clickable" data-sort="number">Tech & Eng.</th>
-                  <th class="sortable clickable test-overall" data-sort="number">Overall</th>
-                  <th class="hidden test-details sortable clickable" data-sort="number">Art & Design</th>
-                  <th class="hidden test-details sortable clickable" data-sort="number">Business</th>
-                  <th class="hidden test-details sortable clickable" data-sort="number">Science</th>
-                  <th class="hidden test-details sortable clickable" data-sort="number">Health & Medicine</th>
-                  <th class="hidden test-details sortable clickable" data-sort="number">Human. & Social Sci.</th>
-                  <th class="hidden test-details sortable clickable" data-sort="number">Tech & Eng.</th>
+                  <th class="clickable" data-sort="string">Model Size</th>
+                  <th class="clickable" data-sort="string">Frame Numbers</th>
+                  <th class="sortable clickable recog-overall" data-sort="number">Overall</th>
+                  <th class="hidden recog-details sortable clickable" data-sort="number">Shot Subject</th>
+                  <th class="hidden recog-details sortable clickable" data-sort="number">Shot Color</th>
+                  <th class="hidden recog-details sortable clickable" data-sort="number">Shot Size</th>
+                  <th class="hidden recog-details sortable clickable" data-sort="number">Shot Angle</th>
+                  <th class="hidden recog-details sortable clickable" data-sort="number">Shot Location</th>
+                  <th class="hidden recog-details sortable clickable" data-sort="number">Shot Type</th>
+                  <th class="hidden recog-details sortable clickable" data-sort="number">Shot Motion</th>
+                  <th class="hidden recog-details sortable clickable" data-sort="number">Shot Speed</th>
+                  <th class="hidden recog-details sortable clickable" data-sort="number">Transition</th>
+                  <th class="hidden recog-details sortable clickable" data-sort="number">Cut Type</th>
+                
+                  <th class="sortable clickable rnj-overall" data-sort="number">Overall</th>
+                  <th class="hidden rnj-details sortable clickable" data-sort="number">Shot Size</th>
+                  <th class="hidden rnj-details sortable clickable" data-sort="number">Shot Angle</th>
+                  <th class="hidden rnj-details sortable clickable" data-sort="number">Shot Location</th>
+                  <th class="hidden rnj-details sortable clickable" data-sort="number">Shot Type</th>
+                  <th class="hidden rnj-details sortable clickable" data-sort="number">Shot Motion</th>
+                  <th class="hidden rnj-details sortable clickable" data-sort="number">Transition</th>
+                  <th class="hidden rnj-details sortable clickable" data-sort="number">Cut Type</th>
+                  <th class="sortable clickable all-overall" data-sort="number">Overall</th>
                 </tr>
+                
               </thead>
               <tbody>
                 <!-- Table body will be populated dynamically -->
               </tbody>
             </table>
-            <p class="test-desc"> Overall results of different models on the MMMU leaderboard. The best-performing model in each category is <b>in-bold</b>, and the second best is <u>underlined</u>. *: results provided by the authors.</p>
+            <p class="test-desc"> Overall results of different models on the VEU-Bench leaderboard.</p> <p>The best-performing model in each category is <b>in-bold</b>, and the second best is <u>underlined</u>.</p>
           </div>
         </div>
       </div>

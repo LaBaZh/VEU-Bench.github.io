@@ -54,15 +54,14 @@ $(document).ready(function() {
                 return adjustedValue;
               };
   
-              const recogOverall = formatOverallValue(applyStyle(safeGet(row, 'recog.overall'), recogScores.overall[index]), safeGet(row, 'recog.source'));
-              const rnjOverall = formatOverallValue(applyStyle(safeGet(row, 'rnj.overall'), rnjScores.overall[index]), safeGet(row, 'rnj.source'));
-              const allOverall = formatOverallValue(applyStyle(safeGet(row, 'all.overall'), allScores.overall[index]), safeGet(row, 'all.source'));
-  
+              const recogOverall = formatOverallValue(applyStyle(safeGet(row, 'recog.overall'), recogScores.overall[index]), safeGet(row, 'recog.overall'));
+              const rnjOverall = formatOverallValue(applyStyle(safeGet(row, 'rnj.overall'), rnjScores.overall[index]), safeGet(row, 'rnj.overall'));
+              const allOverall = formatOverallValue(applyStyle(safeGet(row, 'all.overall'), allScores.overall[index]), safeGet(row, 'all.overall'));
+
               tr.innerHTML = `
                 <td>${nameCell}</td>
                 <td>${row.info.size}</td>
-                <td>${row.info.fps}</td>
-                <td>${row.info.date}</td>
+                <td>${row.info.frameNumbers}</td>
                 <td class="recog-overall">${recogOverall}</td>
                 <td class="hidden recog-details">${applyStyle(safeGet(row, 'recog.shotSubject'), recogScores.shotSubject[index])}</td>
                 <td class="hidden recog-details">${applyStyle(safeGet(row, 'recog.shotColor'), recogScores.shotColor[index])}</td>
@@ -83,7 +82,6 @@ $(document).ready(function() {
                 <td class="hidden rnj-details">${applyStyle(safeGet(row, 'rnj.transition'), rnjScores.transition[index])}</td>
                 <td class="hidden rnj-details">${applyStyle(safeGet(row, 'rnj.cutType'), rnjScores.cutType[index])}</td>
                 <td class="all-overall">${allOverall}</td>
-                <td class="hidden all-details">${applyStyle(safeGet(row, 'all.overall'), allScores.overall[index])}</td>
                 `;
               tbody.appendChild(tr);
             });
@@ -131,7 +129,8 @@ $(document).ready(function() {
       var headerCell = document.querySelector('.' + sec + '-details-cell');
       if (sec === section) {
         detailCells.forEach(cell => cell.classList.toggle('hidden'));
-        headerCell.setAttribute('colspan', headerCell.getAttribute('colspan') === '1' ? (sec === 'recog' ? '3' : '7') : '1');
+        // corresponding to each category's column number
+        headerCell.setAttribute('colspan', headerCell.getAttribute('colspan') === '1' ? (sec === 'recog' ? '11' : '8') : '1');
       } else {
         detailCells.forEach(cell => cell.classList.add('hidden'));
         overallCells.forEach(cell => cell.classList.remove('hidden'));
@@ -255,8 +254,17 @@ $(document).ready(function() {
   function prepareScoresForStyling(data, section) {
     const scores = {};
     const fields = [
-      'overall', 'vision', 'original', 'artDesign', 'business',
-      'science', 'healthMedicine', 'humanSocialSci', 'techEng'
+      'overall',
+      'shotSubject',
+      'shotColor',
+      'shotSize',
+      'shotAngle',
+      'shotLocation',
+      'shotType',
+      'shotMotion',
+      'shotSpeed',
+      'transition',
+      'cutType'
     ];
   
     fields.forEach(field => {
