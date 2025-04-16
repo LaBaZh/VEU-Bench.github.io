@@ -119,7 +119,7 @@
               <!-- PDF Link. -->
               <span class="link-block">
                 <a href="https://arxiv.org/pdf/your-paper-id"
-                   class="external-link button is-normal is-rounded is-dark">
+                  class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                   </span>
@@ -129,7 +129,7 @@
               <!-- arXiv Link. -->
               <span class="link-block">
                 <a href="https://arxiv.org/abs/your-paper-id"
-                   class="external-link button is-normal is-rounded is-dark">
+                  class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
                   </span>
@@ -139,7 +139,7 @@
               <!-- Code Link. -->
               <span class="link-block">
                 <a href="https://github.com/yourusername/veu-bench"
-                   class="external-link button is-normal is-rounded is-dark">
+                  class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
@@ -149,7 +149,7 @@
               <!-- Dataset Link. -->
               <span class="link-block">
                 <a href="https://github.com/yourusername/veu-bench/releases"
-                   class="external-link button is-normal is-rounded is-dark">
+                  class="external-link button is-normal is-rounded is-dark">
                   <span class="icon" style="font-size:18px">
                     🤗
                   </span>
@@ -246,7 +246,42 @@
       </div>
     </div>
   
-  
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Comparisons with Existing Benchmarks</h2>
+        <div class="content has-text-justified">
+          <p>
+            <div class="content has-text-justified">
+              <p>
+                While previous VEU benchmarks primarily focus on basic recognition tasks, <em>VEU-Bench</em> extends the evaluation to include both <strong>reasoning</strong> and <strong>judging</strong>.
+              </p>
+            
+              <p>
+                <strong>Recognition:</strong> Models classify editing elements across 10 dimensions through multiple-choice questions.
+              </p>
+            
+              <p>
+                <strong>Reasoning:</strong> Models explain changes in editing elements (e.g., shot size, transitions) with supporting evidence.
+              </p>
+            
+              <p>
+                <strong>Judging:</strong> Models assess the purpose and impact of editing choices, demonstrating an understanding of the creator's intent and storytelling effects.
+              </p>
+            
+              <p>
+                This three-level design offers a more comprehensive and realistic assessment of video editing understanding compared to earlier benchmarks.
+              </p>
+            </div>
+            
+          </p>
+          <div class="content has-text-centered">
+            <img src="static/images/compare.png" alt="comparison" class="center">
+            <p> Comparison between VEU-Bench and previous
+              VEU benchmarks. VEU-Bench encompasses a wider range of video editing components and includes high-level reasoning and judgment tasks.</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="columns is-centered m-6">
       <div class="column is-full has-text-centered content">
@@ -254,26 +289,34 @@
         <div class="carousel results-carousel">
           <div class="box m-5">
             <div class="content has-text-centered">
-              <img src="static/images/statistics/answer_length.png" alt="algebraic reasoning" width="100%"/>
-              <p> Sampled MMMU examples from each discipline. The questions and images need expert-level knowledge to understand and reason.</p>
+              <img src="static/images/statistics/answer_length.png" alt="answer length" width="100%"/>
+              <p> 
+                Answer length statistics of the curated VEU-Bench Dataset. The answer length ranges from 0-115 characters, with the majority between 31-50 characters.
+              </p>
             </div>
           </div>
           <div class="box m-5">
             <div class="content has-text-centered">
-              <img src="static/images/statistics/duration.png" alt="algebraic reasoning" width="100%"/>
-              <p> Sampled MMMU examples from each discipline. The questions and images need expert-level knowledge to understand and reason.</p>
+              <img src="static/images/statistics/duration.png" alt="video duration" width="100%"/>
+              <p> 
+                Video duration statistics of the curated VEU-Bench Dataset. The video durations range from 1 to over 60 seconds, with the majority between 1 and 12 seconds.
+              </p>
             </div>
           </div>
           <div class="box m-5">
             <div class="content has-text-centered">
-              <img src="static/images/statistics/portion.png" alt="algebraic reasoning" width="82%"/>
-              <p> Sampled MMMU examples from each discipline. The questions and images need expert-level knowledge to understand and reason.</p>
+              <img src="static/images/statistics/portion.png" alt="datasource portion" width="82%"/>
+              <p> 
+                Sampled video sources in our VEU-Bench dataset from various domains. The majority of the videos are cherry-picked from the AVE dataset, with the rest from MovieCuts and AutoTransition.  
+              </p>
             </div>
           </div>
           <div class="box m-5">
             <div class="content has-text-centered">
-              <img src="static/images/statistics/task_portion.png" alt="algebraic reasoning" width="72%"/>
-              <p> Sampled MMMU examples from each discipline. The questions and images need expert-level knowledge to understand and reason.</p>
+              <img src="static/images/statistics/task_portion.png" alt="task portion" width="72%"/>
+              <p> 
+                Task portion statistics of our dataset. The majority of the task was perception, followed by reasoning and judge.
+              </p>
             </div>
           </div>
         </div>
