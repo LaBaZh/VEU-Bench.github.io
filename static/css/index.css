@@ -73,7 +73,7 @@ body {
 }
 
 .publication-authors a {
-   color: hsl(204, 86%, 53%) !important;
+   color: #555 !important;
 }
 
 .publication-authors a:hover {
@@ -248,7 +248,7 @@ body {
 }
 
 .publication-authors a {
-  color: hsl(204, 86%, 53%) !important;
+  color: #555 !important;
 }
 
 .publication-authors a:hover {
@@ -507,3 +507,14 @@ td:hover {
   object-fit: contain;
 }
 
+.navbar-link {
+  color: #555555;
+}
+
+.navbar-item {
+  color: #555555;
+}
+
+.navbar-link:not(.is-arrowless)::after {
+  border-color: #555555;
+}
